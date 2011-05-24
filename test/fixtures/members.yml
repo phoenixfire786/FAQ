@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  reason: MyString
+  seen_time: 2011-05-16 14:47:56
+  out_time: 2011-05-16 14:47:56
+  msr: MyString
+
+two:
+  name: MyString
+  reason: MyString
+  seen_time: 2011-05-16 14:47:56
+  out_time: 2011-05-16 14:47:56
+  msr: MyString

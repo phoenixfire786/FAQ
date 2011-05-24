@@ -1,0 +1,224 @@
+
+
+div.member_sign_in {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 8em;
+	background: url('../images/banner.jpg');
+	background-repeat: no-repeat;
+}
+
+div.member_sign_in table.in_table {
+	margin-left: auto;
+	margin-right: 10px;
+	vertical-align: middle;
+	width: 15em;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: #E77F1A;
+	border-spacing: 0;
+	background-color: #eee;
+	filter:alpha(opacity=85);
+	opacity: 0.9;
+}
+
+div.member_sign_in table.in_table th {
+	font-variant:small-caps;
+	font-weight: normal;
+	color: white;
+	background-color: #E77F1A;
+	letter-spacing: 1px;
+	font-size: 100%;
+	padding-left: .5em;
+	font-family: Georgia;
+	text-align: left;
+}
+
+div.member_sign_in table.in_table td.header {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	font-variant:small-caps;
+	text-align: right;
+	font-family: Georgia;
+	letter-spacing: 1px; 
+	font-size: 75%;
+	
+}
+
+div.member_sign_in table.in_table tr.field input {
+	font-family: Tahoma;
+	border-radius: 5px;
+	font-size: 50%;
+	width: 90%;
+	margin-top: 1em;
+	margin-bottom: .5em;
+	margin-left: .5em;
+}
+
+div.member_sign_in table.in_table td.radio_label {
+	font-family: Tahoma;
+	font-variant:normal;
+	border-radius: 0;
+	font-size: 50%;
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
+div.member_sign_in table.in_table tr.radio input {
+	font-size: 50%;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+div.member_sign_in table.in_table tr.actions input {
+	font-family: Georgia;
+	font-variant:small-caps;
+	border-radius: 5px;
+	font-size: 75%;
+	background-color: #E77F1A;
+	border-color: #E77F1A;
+	margin-left: .5em;
+	color: white;
+	width: 90%;
+	height: 2em;
+	margin-bottom: .5em;
+}
+
+div.member_sign_in table.in_table td.actions input {
+	font-family: Georgia;
+	font-variant:small-caps;
+	border-radius: 5px;
+	font-size: 75%;
+	background-color: #E77F1A;
+	border-color: #E77F1A;
+	color: white;
+	width: 7.5em;
+	height: 2em;
+	margin-top: .25em;
+	margin-bottom: .25em;
+	margin-right: 1em;
+	float: right;
+}
+
+div.member_sign_in table.in_table select {
+	font-family: Tahoma;
+	font-variant:normal;
+	border-radius: 5px;
+	font-size: 75%;
+	background-color: #FFF;
+	border-color: #FFF;
+	width: 100%;
+	height: 2em;
+	margin-top: .25em;
+	margin-bottom: .25em;
+	margin-left: 1em;
+	float: right;
+}
+
+
+
+nav.employee_sign_in {
+	width: 100%;
+	background-color: #83C5D7;
+	font-size: 75%;
+}
+
+nav.employee_sign_in table.employee_sign_in {
+	width: 35em;
+	border-spacing: 0;
+	padding-top: .25em;
+	padding-bottom: .25em;
+	margin-left: 0;
+	margin-right: auto;
+}
+
+nav.employee_sign_in table.employee_sign_in td.label {
+	margin-bottom: 1em;
+	padding-left: 1em;
+	font-variant:small-caps;
+	text-align: right;
+	color: #FFF;
+	font-family: Georgia;
+	letter-spacing: 1px; 
+}
+
+nav.employee_sign_in table.employee_sign_in td.field input {
+	font-family: Tahoma;
+	border-radius: 5px;
+	width: 90%;
+}
+
+nav.employee_sign_in table.employee_sign_in td.action input {
+	font-family: Tahoma;
+	text-align: center;
+	color: #FFF;
+	border-radius: 10px;
+	background-color: #83C5D7;
+	margin-left: 1em;
+	width: 10em;
+}
+
+nav.employee_sign_in table.nav_bar {
+	width: auto;
+	border-spacing: 0;
+	padding-top: .25em;
+	padding-bottom: .25em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav.employee_sign_in table.nav_bar td.label {
+	margin-bottom: 1em;
+	padding-left: 1em;
+	font-variant:small-caps;
+	text-align: right;
+	color: #FFF;
+	font-family: Georgia;
+	letter-spacing: 1px; 
+}
+
+
+
+
+
+table.database {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #E77F1A;
+	border-spacing: 0;
+	font-family: Tahoma;
+}
+
+table.database tr:nth-of-type(odd) {
+	background-color: #eee;
+}
+
+table.database tr{
+	font-size: 75%;
+	background-color: #fff;
+}
+
+table.database td {
+	margin: 0em;
+	border: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: .25em;
+	padding-bottom: .25em;
+	text-align: center;
+}
+
+table.database th {
+	padding-left: 1em;
+	padding-right: 1em;
+	font-variant:small-caps;
+	font-weight: normal;
+	color: white;
+	background-color: #E77F1A;
+	letter-spacing: 1px;
+	font-size: 125%;
+	font-family: Georgia;
+}

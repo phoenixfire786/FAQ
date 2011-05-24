@@ -1,0 +1,39 @@
+<table class= "in_table">
+	<tr><th colspan="3"> Sign In Here </th></tr>
+
+	<%= form_for(@member) do |f| %>
+		<tr class="field">
+			<td class="header"> <%= f.label :name %>:  </td>
+			<td class="text_input" colspan="2"> <%= f.text_field :name %> </td>
+		</tr>
+
+		<tr class="radio">
+			<td class="header"> <%= f.label :reason %>: </td>
+			<td class="radio_label"> 
+				<%= f.radio_button :reason, 'Eligibility' %> 
+ 				<%= f.label :eligibility %>
+			</td>
+			<td class="radio_label"> 
+				<%= f.radio_button :reason, 'Claims' %> 
+				<%= f.label :claims %>
+			</td>
+		</tr>
+	
+		<tr class="radio">
+			<td></td>
+			<td class="radio_label"> 
+				<%= f.radio_button :reason, 'Sick Leave' %> 
+				<%= f.label :sick_leave %>
+			</td>
+			<td class="radio_label"> 
+				<%= f.radio_button :reason, 'Pension' %> 
+				<%= f.label :pension %>
+			</td>
+		</tr>
+
+		<tr class="actions">
+			<td></td>
+			<td colspan="2"><%= f.submit "Touch to Sign In" %> </td>
+		</tr>
+	<% end %>
+</table>

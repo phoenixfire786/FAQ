@@ -1,0 +1,33 @@
+<table class= "in_table">
+	<tr><th colspan="3"> Check In/Out </th></tr>
+
+	<%= form_for(@member) do |f| %>
+		<tr class="field">
+		</tr>
+		
+		<tr>
+			<% unless @waiting_members.empty? %>
+				<%= form_for @member do |f| %>
+					<td class="actions"> <%= f.submit "Check In"%> </td> 
+					<td class="dropdown"> 
+						<%= f.collection_select :id, @waiting_members, :id, :name %>
+					</td>
+				<% end %>
+			<% end %>
+		</tr>
+	
+		<tr >
+			<% unless @seen_members.empty? %>
+				<%= form_for @member do |f| %>
+					<td class="actions"> <%= f.submit "Check Out"%> </td> 
+					<td class="dropdown"> 
+						<%= f.collection_select :id, @seen_members, :id, :name %>
+					</td>
+				<% end %>
+			<% end %>
+		</tr>
+
+		<tr class="actions">
+		</tr>
+	<% end %>
+</table>

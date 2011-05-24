@@ -1,0 +1,12 @@
+<h1>Members#sign_in</h1>
+
+<%= form_for(@member) do |f| %>
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :reason %><br />
+		<%= f.text_field :reason %>
+<%= end %>
