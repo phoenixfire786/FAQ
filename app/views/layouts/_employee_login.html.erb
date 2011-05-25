@@ -1,0 +1,18 @@
+<table class = "employee_sign_in">
+	<% if signed_in? %> 
+		<tr>
+			<td class = "label"> Signed In: <%= current_employee.name %> </td>
+		 	<td class = "action"> <%= button_to "Sign Out", signout_path, :method => :delete %> </td>
+		</tr>
+	<% else %>
+		<tr>
+			<%= form_for(:session, :url => sessions_path) do |f| %> 
+					<td class = "label"> <%= f.label :user %> </td>
+					<td class = "field"> <%= f.text_field :name %> </td>
+					<td class = "label"> <%= f.label :password %> </td>
+					<td class = "field"> <%= f.password_field :password %> </td>
+					<td class = "action"> <%= f.submit "Login" %> </td>
+			<% end %>
+		</tr>
+	<% end %>
+</table>

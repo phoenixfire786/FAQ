@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FAQ</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+	<title>FAQ</title>
+	
+	<%= stylesheet_link_tag :all %>
+	<%= javascript_include_tag :defaults %>
+	<%= csrf_meta_tag %>
+	<%= stylesheet_link_tag 'custom', :media => 'screen' %>
+
+	<nav class="employee_sign_in">
+		<%= render 'layouts/employee_login' %>
+	</nav>
+
+	<% if signed_in? %> 
+		<div class = "member_sign_in">
+			<%= render 'layouts/employee' %>
+		</div>
+	<% else %>
+		<div class = "member_sign_in">
+			<%= render 'layouts/member' %>
+		</div> 
+	<% end %>
+
+	<nav class="employee_sign_in">
+		<%= render 'layouts/navigation' %>
+	</nav>
+
 </head>
 <body>
 

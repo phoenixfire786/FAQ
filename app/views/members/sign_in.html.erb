@@ -1,46 +1,4 @@
-<%= stylesheet_link_tag 'custom', :media => 'screen' %>
-<%= csrf_meta_tag %>
 
-<nav class="employee_sign_in">
-	<table class = "employee_sign_in">
-		<% if signed_in? %> 
-			<tr>
-				<td class = "label"> Signed In: <%= current_employee.name %> </td>
-			 	<td class = "action"> <%= button_to "Sign Out", signout_path, :method => :delete %> </td>
-			</tr>
-		<% else %>
-			<tr>
-				<%= form_for(:session, :url => sessions_path) do |f| %> 
-						<td class = "label"> <%= f.label :user %> </td>
-						<td class = "field"> <%= f.text_field :name %> </td>
-						<td class = "label"> <%= f.label :password %> </td>
-						<td class = "field"> <%= f.password_field :password %> </td>
-						<td class = "action"> <%= f.submit "Login" %> </td>
-				<% end %>
-			</tr>
-		<% end %>
-	</table>
-</nav>
-
-<% if signed_in? %> 
-	<div class = "member_sign_in">
-		<%= render 'layouts/employee' %>
-	</div>
-<% else %>
-	<div class = "member_sign_in">
-		<%= render 'layouts/member' %>
-	</div> 
-<% end %>
-<nav class="employee_sign_in">
-	<table class = "nav_bar">
-		<tr>
-			<td class = "label"> HOME | ELIGIBILITY FAQ | CLAIMS FAQ | SICK LEAVE FAQ | PENSION FAQ </td> 
-		</tr>
-		
-	</table>
-</nav>
-
-<%= yield %>
 <div>
 	<table class = "database">
 			<tr>
@@ -55,42 +13,31 @@
 		</th>
 		
 		<% unless @all_members.nil? %>
-			<% @all_members.each do |members| %>
-				<% @datetime = members.created_at.in_time_zone("Pacific Time (US & Canada)") %>
-				<% @day = @datetime.day %>
-				<% @month = @datetime.month %>
-				<% @year = @datetime.year %>
-				<% @hour = @datetime.hour %>
-				<% @min = @datetime.min.to_s.rjust(2,'0') %>
-				<% @sec = @datetime.sec.to_s.rjust(2,'0') %>
-				
-				
-				<tr>
-					<td> <%= "#{@month}/#{@day}/#{@year}" %> </td>
-					<td> <%= "#{@hour}:#{@min}:#{@sec}" %> </td>
-					<td> <%= "#{members.name}" %> </td>
-					<td> <%= "#{members.reason}"%> </td>
-					<td> <%= "#{members.msr}"%> </td>
-					<% unless members.seen_time.nil? %>
-						<% @datetime_in = members.seen_time.in_time_zone("Pacific Time (US & Canada)") %>
-						<% @hour_in = @datetime_in.hour %>
-						<% @min_in = @datetime_in.min.to_s.rjust(2,'0') %>
-						<% @sec_in = @datetime_in.sec.to_s.rjust(2,'0') %>
-						<td> <%= "#{@hour_in}:#{@min_in}:#{@sec_in}" %> </td>
-					<% else %>
-						<td> </td>
-					<% end %>
+			
+			<% @entries = Member.count %>
+			<% @entries.downto(1) do |i| %>
+				<% members = Member.find(i) %>
+
+				<!-- Display only today's data -->
+				<% if members.created_at.strftime("%x") == Time.now.strftime("%x") %>
+					<tr>
+						<td> <%= "#{members.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%m/%e/%Y")}" %></td>
+						<td> <%= "#{members.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%l:%M %p")}" %> </td>
+						<td> <%= "#{members.name}" %> </td>
+						<td> <%= "#{members.reason}"%> </td>
+						<td> <%= "#{members.msr}"%> </td>
+						<% unless members.seen_time.nil? %>
+							<td> <%= "#{members.seen_time.in_time_zone("Pacific Time (US & Canada)").strftime("%l:%M %p")}" %> </td>
+						<% else %>
+							<td> </td>
+						<% end %>
 					
-					<% unless members.out_time.nil? %>
-						<% @datetime_out = members.out_time.in_time_zone("Pacific Time (US & Canada)") %>
-						<% @hour_out = @datetime_out.hour %>
-						<% @min_out = @datetime_out.min.to_s.rjust(2,'0') %>
-						<% @sec_out = @datetime_out.sec.to_s.rjust(2,'0') %>
-						<td> <%= "#{@hour_out}:#{@min_out}:#{@sec_out}" %> </td>
-					<% else %>
-						<td> </td>
-					<% end %>
-					
+						<% unless members.out_time.nil? %>
+							<td> <%= "#{members.out_time.in_time_zone("Pacific Time (US & Canada)").strftime("%l:%M %p")}" %> </td>
+						<% else %>
+							<td> </td>
+						<% end %>
+					<% end %> 	
 				</tr>
 			<% end %>
 		<% end %>
